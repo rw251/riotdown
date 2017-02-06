@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
+    "launch-php-server": "php -S 127.0.0.1:8000 -t server/ -c php.ini",
+    "start-dev-server": "webpack-dev-server",
+    "start": "npm-run-all --parallel launch-php-server start-dev-server",
     "build": "webpack"
   },
   "author": "",
@@ -19,9 +21,9 @@
     "riot": "^3.0.5",
     "riot-route": "^3.0.2",
     "riotcontrol": "0.0.3",
-    "riotjs-loader": "^3.0.0",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
+    "riotjs-loader": "^4.0.0",
+    "webpack": "1.x.x",
+    "webpack-dev-server": "1.x.x",
     "webpack-validator": "^2.3.0"
   }
 }

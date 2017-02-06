@@ -1,10 +1,12 @@
 require('./views/home.tag');
 require('./views/letters.tag');
+require('./views/diagnostics.tag');
 
 <app>
 
   <home></home>
   <letters></letters>
+  <diagnostics></diagnostics>
 
   <script>
     var tag = this;

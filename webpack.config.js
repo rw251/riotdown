@@ -23,6 +23,13 @@ var config = {
   },
 
   devServer: {
+
+    proxy: {
+      '**/*.php': {
+        target: 'http://127.0.0.1:8000',
+        secure: false
+      }
+    },
     // Enable history API fallback so HTML5 History API based
     // routing works. This is a good default that will come
     // in handy in more complicated setups.

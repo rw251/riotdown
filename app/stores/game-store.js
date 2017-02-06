@@ -48,10 +48,10 @@ module.exports = function() {
   // This store can easily be swapped for another, while the view components remain untouched.
 
   self.on('start-game', function() {
-    self.players={"p1":"Richard Williams", "p2": self.gamedata.p1.n};
+    self.players = { "p1": "Richard Williams", "p2": self.gamedata.p1.n };
     self.trigger('players_changed', self.players);
 
-    self.scores={"p1":0, "p2":0};
+    self.scores = { "p1": 0, "p2": 0 };
     self.trigger('scores_changed', self.scores);
 
     self.trigger('letters-round', self.gamedata.r[0]);
@@ -59,6 +59,10 @@ module.exports = function() {
 
   self.on('letters_init', function() {
     self.trigger('letters_changed', self.gamedata.r[0].l);
+  });
+
+  self.on('diagnostics', function() {
+    self.trigger('show-page', "diagnostics");
   });
 
   // The store emits change events to any listening views, so that they may react and redraw themselves.
